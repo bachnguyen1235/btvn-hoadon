@@ -1,6 +1,7 @@
 package service;
 
 import entity.Customer;
+import entity.DichVu;
 import entity.HoaDon;
 import entity.QuanLyHoaDon;
 
@@ -30,7 +31,7 @@ public class QuanLyHoaDonService {
         for (int i = 0; i < customerNumber; i++) {
             System.out.println("nhap thong tin gui tiet kiem cho kh thu: " + (i + 1));
             Customer customer = inputCustomer();
-            List<HoaDon> hoaDons = savingAccounts();
+            List<HoaDon> hoaDons = hoaDons();
             SavingAccountManagement savingAccountManagement = new SavingAccountManagement(customer, savingAccounts);
         }
     }
@@ -54,15 +55,15 @@ public class QuanLyHoaDonService {
     private List<HoaDon> hoaDons(){
         System.out.println("nhap so luong ngan hang gui tiet kiem:");
         int bankNumber = new Scanner(System.in).nextInt();
-        List<SavingAccount> savingAccounts = new ArrayList<>();
+        List<HoaDon> hoaDons = new ArrayList<>();
         for (int j = 0; j < bankNumber; j++) {
             System.out.println("nhap thong tin cho so: " + (j + 1));
             System.out.println("nhap ma ngan hang muon gui:");
-            Bank bank = null;
+            DichVu dichVu = null;
             int bankID;
             while (true) {
                 bankID = new Scanner(System.in).nextInt();
-                bank= bankService.findByID(bankID);
+                dichVu = dichVu.findByID(bankID);
                 if (bank != null) {
                     break;
                 }
@@ -74,6 +75,6 @@ public class QuanLyHoaDonService {
             SavingAccount savingAccount = new SavingAccount(bank, money);
             savingAccounts.add(savingAccount);
         }
-        return savingAccounts;
+        return hoaDons;
     }
 }

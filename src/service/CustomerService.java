@@ -32,7 +32,7 @@ public class CustomerService {
         for (int i = 0; i < customerNumber; i++) {
             System.out.println("nhap thong tin cho kh thu " + (i + 1));
             Customer customer = new Customer();
-            customer.inputNewCustomer();
+            customer.inputInfor();
             customers.add(customer);
         }
     }

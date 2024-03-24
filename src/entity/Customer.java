@@ -85,7 +85,7 @@ public class Customer {
                 break;
         }
     }
-    public void inputNewCustomer() {
+    public void inputInfor() {
         System.out.println("nhap ten: ");
         this.setName(new Scanner(System.in).nextLine());
         System.out.println("nhap dia chi: ");
