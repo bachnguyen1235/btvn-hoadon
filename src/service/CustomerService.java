@@ -36,15 +36,7 @@ public class CustomerService {
             customers.add(customer);
         }
     }
-    public Customer findById(int customerID){
-        for (int j = 0; j < customers.size(); j++) {
-            if (customerID == customers.get(j).getId()) {
-                return customers.get(j);
-            }
 
-        }
-        return null;
-    }
     public void showCustommer(){
         for (Customer customer:customers){
             System.out.println(customer.toString());

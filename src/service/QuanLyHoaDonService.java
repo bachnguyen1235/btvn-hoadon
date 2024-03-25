@@ -4,6 +4,7 @@ import entity.Customer;
 import entity.DichVu;
 import entity.HoaDon;
 import entity.QuanLyHoaDon;
+import util.IOUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,7 @@ public class QuanLyHoaDonService {
         int customerID;
         while (true) {
             customerID = new Scanner(System.in).nextInt();
-            customer= customerService.findById(customerID);
+            customer= IOUtil.findById(customerID,);
             if (customer != null) {
                 break;
             }
@@ -60,20 +61,20 @@ public class QuanLyHoaDonService {
             System.out.println("nhap thong tin cho so: " + (j + 1));
             System.out.println("nhap ma ngan hang muon gui:");
             DichVu dichVu = null;
-            int bankID;
+            int dichVuID;
             while (true) {
-                bankID = new Scanner(System.in).nextInt();
-                dichVu = dichVu.findByID(bankID);
-                if (bank != null) {
+                dichVuID = new Scanner(System.in).nextInt();
+                dichVu = IOUtil.findById(dichVuID,);
+                if (dichVu != null) {
                     break;
                 }
-                System.out.println("ma bank ko ton tai, hay nhap lai");
+                System.out.println("ma DV ko ton tai, hay nhap lai");
             }
 
-            System.out.println(" nhap so tien muon gui o ngan hang nay");
-            double money = new Scanner(System.in).nextInt();
-            SavingAccount savingAccount = new SavingAccount(bank, money);
-            savingAccounts.add(savingAccount);
+            System.out.println(" nhap so data tiêu thụ");
+            double data = new Scanner(System.in).nextInt();
+            HoaDon hoaDon= new HoaDon(dichVu, data);
+            hoaDons.add(hoaDon);
         }
         return hoaDons;
     }

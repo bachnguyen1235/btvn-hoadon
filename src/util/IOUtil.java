@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class IOUtil {
-    public <T extends Action> T findById(int id, List<T> items) {
+    public static <T extends Action> T findById(int id, List<T> items) {
         for (T item : items) {
             if (id == item.getId()) {
                 return item;
