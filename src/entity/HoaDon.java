@@ -5,13 +5,11 @@ import java.time.LocalDate;
 public class HoaDon {
 
     private DichVu dichVu;
-    private double amount;
-    private LocalDate createdDate;
+    private double tongDungLuongDaDung;
 
-    public HoaDon(DichVu dichVu, double amount, LocalDate createdDate) {
+    public HoaDon(DichVu dichVu, double tongDungLuongDaDung) {
         this.dichVu = dichVu;
-        this.amount = amount;
-        this.createdDate = LocalDate.now();
+        this.tongDungLuongDaDung = tongDungLuongDaDung;
     }
 
     public DichVu getDichVu() {
@@ -22,19 +20,11 @@ public class HoaDon {
         this.dichVu = dichVu;
     }
 
-    public double getAmount() {
-        return amount;
+    public double getTongDungLuongDaDung() {
+        return tongDungLuongDaDung;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public LocalDate getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(LocalDate createdDate) {
-        this.createdDate = createdDate;
+    public void setTongDungLuongDaDung(double tongDungLuongDaDung) {
+        this.tongDungLuongDaDung = tongDungLuongDaDung;
     }
 }

@@ -25,14 +25,14 @@ public class QuanLyHoaDonService {
     }
 
     public void taoMoiHoaDon() {
-        System.out.println("co bao nhieu kh muon gui tiet kiem: ");
+        System.out.println("co bao nhieu kh muon su dung dich vu? ");
         int customerNumber = new Scanner(System.in).nextInt();
 
         for (int i = 0; i < customerNumber; i++) {
-            System.out.println("nhap thong tin gui tiet kiem cho kh thu: " + (i + 1));
+            System.out.println("nhap thong tin dich vu cho kh thu: " + (i + 1));
             Customer customer = inputCustomer();
             List<HoaDon> hoaDons = hoaDons();
-            SavingAccountManagement savingAccountManagement = new SavingAccountManagement(customer, savingAccounts);
+            QuanLyHoaDon quanLyHoaDon = new QuanLyHoaDon(customer, hoaDons);
         }
     }
 
